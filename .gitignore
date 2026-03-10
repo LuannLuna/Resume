@@ -1,1 +1,13 @@
 *DS_Store
+
+# LaTeX auxiliary files (safety net for root directory)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Ensure PDFs are tracked (negation pattern)
+!*.pdf

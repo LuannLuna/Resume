@@ -1,0 +1,133 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Essential packages
+\usepackage[margin=0.75in]{geometry}     % Page margins
+\usepackage{enumitem}                    % Customized lists
+\usepackage{hyperref}                    % Clickable links
+\usepackage{titlesec}                    % Section title formatting
+\usepackage[utf8]{inputenc}              % UTF-8 encoding
+\usepackage[T1]{fontenc}                 % Font encoding
+
+% Hyperref configuration
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdfauthor={Luann Luna},
+    pdftitle={Luann Luna - Resume},
+    pdfsubject={Resume},
+    pdfkeywords={iOS, Software Engineer, Swift}
+}
+
+% Section formatting - classic style with horizontal rule
+\titleformat{\section}
+    {\large\bfseries}                    % Format
+    {}                                   % Label
+    {0pt}                                % Space between label and title
+    {}                                   % Code before title
+    [\titlerule]                         % Code after title
+
+% Reduce space after sections
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Custom commands for resume entries
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Adjust list spacing
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+
+\begin{document}
+
+%------- HEADER -------
+\begin{center}
+    {\LARGE \textbf{Luann Luna}} \\
+    \vspace{0.5em}
+    Senior iOS Engineer \\
+    \vspace{0.3em}
+    \href{mailto:your.email@example.com}{your.email@example.com} $|$
+    \href{https://linkedin.com/in/yourprofile}{linkedin.com/in/yourprofile} $|$
+    \href{https://github.com/yourusername}{github.com/yourusername}
+\end{center}
+
+\vspace{0.5em}
+
+%------- PROFESSIONAL SUMMARY -------
+\section*{Professional Summary}
+Experienced iOS Engineer with expertise in Swift, UIKit, and modern iOS development practices. Passionate about creating elegant, user-focused applications with clean architecture and robust testing.
+
+%------- EXPERIENCE -------
+\section*{Experience}
+
+\begin{itemize}[leftmargin=0.15in]
+    \resumeSubheading
+        {Senior iOS Engineer}{Month Year -- Present}
+        {Company Name}{City, State}
+        \begin{itemize}
+            \resumeItem{Led development of iOS applications serving thousands of users}
+            \resumeItem{Architected scalable solutions using MVVM and Clean Architecture}
+            \resumeItem{Mentored junior developers and conducted code reviews}
+            \resumeItem{Integrated third-party APIs and optimized app performance}
+        \end{itemize}
+
+    \resumeSubheading
+        {iOS Engineer}{Month Year -- Month Year}
+        {Previous Company Name}{City, State}
+        \begin{itemize}
+            \resumeItem{Developed new features for iOS applications using Swift and UIKit}
+            \resumeItem{Implemented unit and UI tests achieving 80\% code coverage}
+            \resumeItem{Collaborated with designers to implement pixel-perfect UIs}
+            \resumeItem{Reduced app crash rate by 50\% through debugging and optimization}
+        \end{itemize}
+\end{itemize}
+
+%------- EDUCATION -------
+\section*{Education}
+
+\begin{itemize}[leftmargin=0.15in]
+    \resumeSubheading
+        {Bachelor of Science in Computer Science}{Graduation Year}
+        {University Name}{City, State}
+\end{itemize}
+
+%------- TECHNICAL SKILLS -------
+\section*{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in]
+    \item \textbf{Languages:} Swift, Objective-C, Python, JavaScript
+    \item \textbf{iOS Frameworks:} UIKit, SwiftUI, Combine, CoreData, URLSession, AVFoundation
+    \item \textbf{Tools \& Technologies:} Xcode, Git, CocoaPods, Swift Package Manager, Fastlane, Charles Proxy
+    \item \textbf{Architecture:} MVVM, MVC, Clean Architecture, Coordinator Pattern
+    \item \textbf{Testing:} XCTest, XCUITest, Quick/Nimble, Test-Driven Development
+    \item \textbf{Other:} RESTful APIs, JSON, GraphQL, CI/CD, Agile/Scrum
+\end{itemize}
+
+%------- PROJECTS -------
+\section*{Projects}
+
+\begin{itemize}[leftmargin=0.15in]
+    \item \textbf{Project Name} -- Brief description of a notable personal or open-source project. Mention technologies used and impact. \href{https://github.com/yourusername/project}{GitHub}
+    \item \textbf{Another Project} -- Description of another project showcasing your skills and interests in iOS development.
+\end{itemize}
+
+%------- CERTIFICATIONS & AWARDS (Optional) -------
+% \section*{Certifications \& Awards}
+%
+% \begin{itemize}[leftmargin=0.15in]
+%     \item Certification Name -- Issuing Organization, Year
+%     \item Award Name -- Brief description, Year
+% \end{itemize}
+
+\end{document}

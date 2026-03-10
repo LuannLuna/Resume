@@ -1,0 +1,36 @@
+name: Build LaTeX Resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'LaTeX/**'
+      - '.github/workflows/build-latex-resume.yml'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: LaTeX
+          latexmk_use_lualatex: false
+          latexmk_shell_escape: false
+
+      - name: Copy PDF to root directory
+        run: |
+          cp LaTeX/resume.pdf "Luann_Luna_Senior_iOS_Resume.pdf"
+
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add "Luann_Luna_Senior_iOS_Resume.pdf"
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update resume PDF from LaTeX source" && git push)
