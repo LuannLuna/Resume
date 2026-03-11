@@ -22,21 +22,30 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Compile LaTeX document
+      - name: Compile English resume
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume.tex
+          root_file: resume-en.tex
           working_directory: LaTeX
           latexmk_use_lualatex: false
           latexmk_shell_escape: false
 
-      - name: Copy PDF to root directory
-        run: |
-          cp LaTeX/resume.pdf "Luann_Luna_Senior_iOS_Resume.pdf"
+      - name: Compile Portuguese resume
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-pt.tex
+          working_directory: LaTeX
+          latexmk_use_lualatex: false
+          latexmk_shell_escape: false
 
-      - name: Commit and push PDF
+      - name: Copy PDFs to root directory
+        run: |
+          cp LaTeX/resume-en.pdf "Luann_Luna_Resume_EN.pdf"
+          cp LaTeX/resume-pt.pdf "Luann_Luna_Resume_PT.pdf"
+
+      - name: Commit and push PDFs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add "Luann_Luna_Senior_iOS_Resume.pdf"
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update resume PDF from LaTeX source" && git push)
+          git add "Luann_Luna_Resume_EN.pdf" "Luann_Luna_Resume_PT.pdf"
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update resume PDFs from LaTeX source (EN + PT)" && git push)

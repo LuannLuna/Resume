@@ -4,21 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luann Luna - Senior iOS Resume</title>
-    <meta http-equiv="refresh" content="0; url=Luann_Luna_Senior_iOS_Resume.pdf">
     <style>
-        body { font-family: Arial, sans-serif; background: #f9f9f9; color: #222; text-align: center; padding: 60px; }
-        .container { background: #fff; padding: 40px 30px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: inline-block; }
-        h1 { margin-bottom: 16px; }
-        a.resume-link { display: inline-block; margin-top: 24px; padding: 14px 32px; background: #0070f3; color: #fff; border-radius: 6px; text-decoration: none; font-size: 1.2em; transition: background 0.2s; }
-        a.resume-link:hover { background: #005bb5; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #222;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            max-width: 600px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 400;
+        }
+        p {
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .resume-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 36px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        .resume-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .resume-link.en {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .resume-link.pt {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        .resume-link.pt:hover {
+            box-shadow: 0 6px 20px rgba(17, 153, 142, 0.6);
+        }
+        .flag {
+            font-size: 1.5em;
+        }
+        .links {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95em;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Luann Luna</h1>
         <h2>Senior iOS Engineer</h2>
-        <p>Welcome! You can view or download my latest resume below.</p>
-        <a class="resume-link" href="Luann_Luna_Senior_iOS_Resume.pdf" target="_blank" rel="noopener">View/Download Resume (PDF)</a>
+        <p>Select your preferred language to view my resume</p>
+
+        <div class="language-buttons">
+            <a class="resume-link en" href="Luann_Luna_Resume_EN.pdf" target="_blank" rel="noopener">
+                <span class="flag">🇺🇸</span>
+                <span>English Resume</span>
+            </a>
+            <a class="resume-link pt" href="Luann_Luna_Resume_PT.pdf" target="_blank" rel="noopener">
+                <span class="flag">🇧🇷</span>
+                <span>Currículo em Português</span>
+            </a>
+        </div>
+
+        <div class="links">
+            <a href="https://linkedin.com/in/luannluna" target="_blank">LinkedIn</a>
+            <a href="https://github.com/LuannLuna" target="_blank">GitHub</a>
+        </div>
     </div>
 </body>
-</html> 
+</html>
