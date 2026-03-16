@@ -11,3 +11,6 @@
 
 # Ensure PDFs are tracked (negation pattern)
 !*.pdf
+
+# Ignore V2 Portuguese resume (local only, never commit to server)
+Luann_Luna_Resume_V2_PT.pdf
