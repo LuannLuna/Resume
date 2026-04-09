@@ -38,14 +38,15 @@ jobs:
           latexmk_use_lualatex: false
           latexmk_shell_escape: false
 
-      - name: Copy PDFs to root directory
+      - name: Copy PDFs to PDF folder
         run: |
-          cp LaTeX/resume-en.pdf "Luann_Luna_Resume_EN.pdf"
-          cp LaTeX/resume-pt.pdf "Luann_Luna_Resume_PT.pdf"
+          mkdir -p PDF
+          cp LaTeX/resume-en.pdf "PDF/Luann_Luna_Resume_EN.pdf"
+          cp LaTeX/resume-pt.pdf "PDF/Luann_Luna_Resume_PT.pdf"
 
       - name: Commit and push PDFs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add "Luann_Luna_Resume_EN.pdf" "Luann_Luna_Resume_PT.pdf"
+          git add "PDF/Luann_Luna_Resume_EN.pdf" "PDF/Luann_Luna_Resume_PT.pdf"
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update resume PDFs from LaTeX source (EN + PT)" && git push)
