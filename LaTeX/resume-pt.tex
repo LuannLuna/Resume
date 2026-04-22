@@ -1,12 +1,14 @@
 \documentclass[11pt,letterpaper]{article}
 
-\usepackage[margin=0.75in]{geometry}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{titlesec}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% Essential packages
+\usepackage[margin=0.75in]{geometry}     % Page margins
+\usepackage{enumitem}                    % Customized lists
+\usepackage{hyperref}                    % Clickable links
+\usepackage{titlesec}                    % Section title formatting
+\usepackage[utf8]{inputenc}              % UTF-8 encoding
+\usepackage[T1]{fontenc}                 % Font encoding
 
+% Hyperref configuration
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -14,18 +16,21 @@
     pdfauthor={Luann Luna},
     pdftitle={Luann Luna - Currículo},
     pdfsubject={Currículo},
-    pdfkeywords={iOS, Software Engineer, Swift}
+    pdfkeywords={iOS, Engenheiro de Software, Swift}
 }
 
+% Section formatting - classic style with horizontal rule
 \titleformat{\section}
-    {\large\bfseries}
-    {}
-    {0pt}
-    {}
-    [\titlerule]
+    {\large\bfseries}                    % Format
+    {}                                   % Label
+    {0pt}                                % Space between label and title
+    {}                                   % Code before title
+    [\titlerule]                         % Code after title
 
+% Reduce space after sections
 \titlespacing*{\section}{0pt}{12pt}{6pt}
 
+% Custom commands for resume entries
 \newcommand{\resumeSubheading}[4]{
   \item
     \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
@@ -35,10 +40,13 @@
 }
 
 \newcommand{\resumeItem}[1]{
-  \item\small{#1}
+  \item{#1}
 }
 
+% Remove page numbers
 \pagestyle{empty}
+
+% Adjust list spacing
 \setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
 
 \begin{document}
@@ -47,7 +55,11 @@
 \begin{center}
     {\LARGE \textbf{Luann Luna}} \\
     \vspace{0.5em}
-    Engenheiro de Software iOS Sênior \\
+    Senior iOS Software Engineer \\
+    \vspace{0.2em}
+    São Luís, Brasil $|$ Disponível para Remoto \\
+    \vspace{0.1em}
+    Inglês: B2 $|$ Português: Nativo \\
     \vspace{0.3em}
     +55 98 98176-4061 $|$
     \href{mailto:luann.marques@gmail.com}{luann.marques@gmail.com} $|$
@@ -57,99 +69,87 @@
 
 \vspace{0.5em}
 
-%------- RESUMO -------
+%------- RESUMO PROFISSIONAL -------
 \section*{Resumo Profissional}
-
-Engenheiro iOS Sênior com mais de 7 anos de experiência no desenvolvimento e evolução de aplicações em produção utilizadas por milhões de usuários nos setores bancário, e-commerce e mídia. Forte atuação na construção de soluções escaláveis, performáticas e orientadas a métricas de negócio.
-
-Especialista em SwiftUI e UIKit, com domínio de Swift Concurrency (async/await) e aplicação consistente de padrões como MVVM e Clean Architecture. Experiência na definição de arquiteturas resilientes, redução de complexidade técnica e melhoria contínua da base de código.
-
-Histórico comprovado de liderança técnica em iniciativas estratégicas, incluindo migração de UIKit para SwiftUI, otimização de performance e resolução de incidentes em produção em larga escala.
-
-Atuação próxima a stakeholders e times de produto, traduzindo objetivos de negócio em soluções técnicas eficientes. Experiência com experimentação orientada por dados, incluindo testes A/B — com impacto direto em crescimento e engajamento, como um programa de fidelidade que gerou mais de 1.000 vendas orgânicas na primeira semana.
+Engenheiro iOS Sênior com mais de 7 anos de experiência em aplicativos em produção, com milhões de usuários nos setores bancário, e-commerce e mídia. Domínio de SwiftUI e UIKit, com foco em Swift Concurrency (async/await), MVVM e Clean Architecture. Histórico consistente de liderar migrações de UIKit para SwiftUI, investigar problemas críticos em produção e entregar funcionalidades com impacto real --- incluindo um programa de fidelidade que gerou mais de 1.000 vendas orgânicas na primeira semana.
 
 %------- EXPERIÊNCIA -------
 \section*{Experiência}
 
 \begin{itemize}[leftmargin=0.15in]
+    \resumeSubheading
+        {Senior iOS Software Engineer}{Out 2025 -- Presente}
+        {Hi-Tech Talents --- alocado na LikeToKnow.It (LTK)}{}
+        \begin{itemize}
+            \resumeItem{Refatorou a integração com APIs REST usando async/await e URLSession, consolidando múltiplos endpoints em uma camada de dados unificada; o resultado foi mais confiabilidade e menos complexidade no tratamento de respostas para a plataforma LTK (44M+ usuários mensais)}
+            \resumeItem{Criou componentes reutilizáveis em SwiftUI alinhados ao design system da LTK, acelerando o desenvolvimento e garantindo consistência visual nas entregas do time iOS}
+            \resumeItem{Escreveu entre 10 e 15 testes de UI cobrindo fluxos críticos de busca e descoberta com XCTest, pegando regressões cedo e protegendo as jornadas principais do usuário}
+        \end{itemize}
 
-\resumeSubheading
-{Engenheiro de Software iOS Sênior}{Out 2025 -- Presente}
-{Hi-Tech Talents}{}
-\begin{itemize}
-    \resumeItem{Refatorou a integração com APIs REST utilizando async/await e URLSession, consolidando múltiplos endpoints em uma única camada de dados para a plataforma LTK (44M+ usuários mensais)}
-    \resumeItem{Identificou e corrigiu 3 memory leaks e gargalos de performance com Instruments, melhorando o tempo de inicialização e a fluidez de scroll}
-    \resumeItem{Desenvolveu 6 componentes reutilizáveis em SwiftUI seguindo o design system, reduzindo o tempo de implementação de novas telas de 3–4 dias para 1–2 dias}
-\end{itemize}
+    \resumeSubheading
+        {Senior iOS Software Engineer}{Dez 2022 -- Set 2025}
+        {Sebratec --- alocado na Petz}{}
+        \begin{itemize}
+            \resumeItem{Arquitetou o módulo do programa de fidelidade com MVVM e Clean Architecture, alinhando o lançamento a uma campanha estratégica do negócio; as visualizações da tela de fidelidade e o tempo médio de sessão cresceram 150\% na primeira semana, gerando mais de 1.000 vendas orgânicas (plataforma com 1,5M+ usuários)}
+            \resumeItem{Diagnosticou e corrigiu 12 crashes críticos com Instruments e Crashlytics, estabilizando o app e reduzindo avaliações negativas na App Store}
+            \resumeItem{Liderou a migração de UIKit para SwiftUI em 8 telas com uma equipe de 2 devs, cortando o tempo de entrega de funcionalidades de 3 meses para 1,5 mês e consolidando SwiftUI como padrão do time}
+        \end{itemize}
 
-\resumeSubheading
-{Engenheiro de Software iOS Sênior}{Dez 2022 -- Set 2025}
-{Sebratec}{}
-\begin{itemize}
-    \resumeItem{Arquitetou um módulo de programa de fidelidade utilizando MVVM e Clean Architecture, alinhando stakeholders e viabilizando o lançamento junto a uma campanha de negócio; aumentou em 150\% as visualizações e o tempo médio nas telas, gerando mais de 1.000 vendas orgânicas na primeira semana (1,5M+ usuários)}
-    \resumeItem{Diagnosticou e corrigiu 12 crashes críticos utilizando Instruments e Crashlytics, aumentando a estabilidade do app e melhorando sua avaliação na App Store}
-    \resumeItem{Liderou a migração de 8 telas de UIKit para SwiftUI com uma equipe de 2 desenvolvedores, reduzindo o tempo de entrega de funcionalidades de 3 meses para 1,5 mês}
-\end{itemize}
+    \resumeSubheading
+        {iOS Engineer (Contractor)}{Ago 2022 -- Nov 2022}
+        {Turing}{}
+        \begin{itemize}
+            \resumeItem{Ampliou a cobertura de testes unitários de 22\% para 58\% com XCTest, capturando mais de 15 bugs de regressão durante o desenvolvimento e aumentando a confiança nos ciclos de iteração}
+            \resumeItem{Migrou 4 telas de alto tráfego de UIKit para SwiftUI, reduzindo o esforço de manutenção por tela e permitindo que o time de produto publicasse updates de interface com mais agilidade}
+        \end{itemize}
 
-\resumeSubheading
-{Engenheiro iOS}{Ago 2022 -- Nov 2022}
-{Turing}{}
-\begin{itemize}
-    \resumeItem{Refatorou o fluxo de listagem de ingressos do StubHub com SwiftUI e MVVM, corrigindo falhas de validação e melhorando a experiência no checkout (38M+ usuários mensais)}
-    \resumeItem{Aumentou a cobertura de testes unitários de 22\% para 58\% com XCTest, identificando mais de 15 bugs de regressão}
-    \resumeItem{Migrou 4 telas críticas de UIKit para SwiftUI, reduzindo custos de manutenção e padronizando a UI}
-\end{itemize}
+    \resumeSubheading
+        {iOS Engineer / Arquiteto de Soluções Digitais}{Jul 2021 -- Jun 2022}
+        {Capgemini}{}
+        \begin{itemize}
+            \resumeItem{Redesenhou o fluxo de autenticação com RxSwift e carregamento sob demanda das verificações de segurança, reduzindo o tempo de login de 4,2s para 1,5s em um app bancário com mais de 15M de clientes}
+            \resumeItem{Prototipou um sistema de server-driven UI com UIKit para que o backend pudesse controlar layouts de tela, criando a base arquitetural para reduzir a dependência do time em novos releases}
+            \resumeItem{Fez mentoria de um dev iOS júnior em Clean Architecture e SwiftUI, conduzindo o time a um padrão arquitetural compartilhado por meio de code reviews e sessões de pair programming}
+        \end{itemize}
 
-\resumeSubheading
-{Arquiteto de Soluções Digitais}{Jul 2021 -- Jun 2022}
-{Capgemini}{}
-\begin{itemize}
-    \resumeItem{Redesenhou o fluxo de autenticação com async/await e carregamento sob demanda, reduzindo o tempo de login de 4,2s para 1,5s em app bancário com 15M+ clientes}
-    \resumeItem{Implementou testes A/B com Firebase Remote Config, permitindo experimentação sem novos releases e reduzindo o ciclo de testes em aproximadamente 40\%}
-    \resumeItem{Projetou um sistema de UI server-driven com UIKit, reduzindo dependência de releases para mudanças de layout}
-\end{itemize}
+    \resumeSubheading
+        {Desenvolvedor iOS Pleno}{Out 2019 -- Jun 2021}
+        {Dextra Digital}{}
+        \begin{itemize}
+            \resumeItem{Construiu um sistema de descoberta de notícias por geolocalização com CoreLocation, MapKit e GraphQL, dobrando o tempo médio de sessão de 4,2 para 8,7 minutos}
+            \resumeItem{Ampliou a cobertura de testes de 18\% para 67\% com XCTest e Quick/Nimble, evitando mais de 25 bugs em produção ao longo de 18 meses}
+            \resumeItem{Contribuiu para um design system compartilhado em UIKit com mais de 15 componentes reutilizáveis, adotados por 3 times de produto e responsáveis por reduzir em \textasciitilde{}80\% os relatos de inconsistência visual}
+            \resumeItem{Implementou correções de segurança críticas em Objective-C nos apps do Grupo Dafiti (Dafiti, Kanui, Tricae), incluindo controle de sessão e proteções criptográficas exigidas para conformidade com cartões de crédito}
+        \end{itemize}
 
-\resumeSubheading
-{Desenvolvedor iOS Pleno}{Out 2019 -- Jun 2021}
-{Dextra Digital}{}
-\begin{itemize}
-    \resumeItem{Desenvolveu sistema de exploração de notícias por geolocalização com CoreLocation e MapKit, aumentando o tempo médio de sessão de 4,2 para 8,7 minutos}
-    \resumeItem{Elevou a cobertura de testes de 18\% para 67\% com XCTest e Quick/Nimble, prevenindo mais de 25 bugs em produção}
-    \resumeItem{Contribuiu para um design system UIKit com mais de 15 componentes reutilizáveis, adotado por 3 equipes}
-\end{itemize}
-
-\resumeSubheading
-{Desenvolvedor iOS Júnior}{Jul 2018 -- Set 2019}
-{Verité Soluções}{}
-\begin{itemize}
-    \resumeItem{Desenvolveu 3 aplicações iOS para gestão de negócios, suportando mais de 500 operações diárias}
-    \resumeItem{Implementou monitoramento com Firebase Performance, identificando gargalos e melhorando a performance em aproximadamente 45\%}
-    \resumeItem{Implementou geofencing e notificações push, aumentando o uso ativo diário em cerca de 40\%}
-\end{itemize}
-
+    \resumeSubheading
+        {Desenvolvedor iOS Júnior}{Jul 2018 -- Set 2019}
+        {Verité Soluções}{}
+        \begin{itemize}
+            \resumeItem{Desenvolveu 3 aplicativos iOS interconectados para gestão empresarial com Swift e UIKit, digitalizando processos e suportando mais de 500 operações diárias}
+            \resumeItem{Integrou o Firebase Performance Monitoring para mapear tempos de carregamento, identificou gargalos nos fluxos principais e aplicou otimizações que resultaram em 45\% de melhora no tempo de resposta}
+            \resumeItem{Adicionou geofencing com CoreLocation e notificações push, aumentando o uso ativo diário em 40\%}
+        \end{itemize}
 \end{itemize}
 
 %------- FORMAÇÃO -------
 \section*{Formação}
 
 \begin{itemize}[leftmargin=0.15in]
-\resumeSubheading
-{Bacharelado em Ciência da Computação}{2011 -- 2017}
-{Universidade Federal do Maranhão (UFMA)}{}
+    \resumeSubheading
+        {Bacharelado em Ciência da Computação}{2011 -- 2016}
+        {Universidade Federal do Maranhão (UFMA)}{}
 
-\resumeSubheading
-{Técnico em Informática}{2009 -- 2010}
-{Senai Maranhão}{}
 \end{itemize}
 
-%------- SKILLS -------
+%------- HABILIDADES TÉCNICAS -------
 \section*{Habilidades Técnicas}
 
 \begin{itemize}[leftmargin=0.15in]
-\item \textbf{Linguagens \& Frameworks:} Swift, SwiftUI, UIKit, Objective-C, Combine, RxSwift, async/await
-\item \textbf{Arquitetura:} Clean Architecture, MVVM, MVVM-C, VIPER, VIP, MVC, SOLID, Coordinator
-\item \textbf{Ferramentas:} Xcode, SPM, CocoaPods, XCTest, Quick/Nimble, Instruments
-\item \textbf{Tecnologias:} Firebase, GraphQL, APIs REST, URLSession, CoreLocation, MapKit
+    \item \textbf{Linguagens e Frameworks:} Swift, SwiftUI, UIKit, Combine, RxSwift, Swift Concurrency (async/await)
+    \item \textbf{Padrões de Arquitetura:} Clean Architecture, MVVM, MVVM-C, Princípios SOLID, Coordinator Pattern
+    \item \textbf{Ferramentas:} Xcode, Swift Package Manager, XCTest, Quick/Nimble, Instruments, ViewCode
+    \item \textbf{Tecnologias:} Firebase (Crashlytics, Analytics, Remote Config), GraphQL, REST APIs, CoreLocation, MapKit
 \end{itemize}
 
 \end{document}
