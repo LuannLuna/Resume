@@ -6,8 +6,8 @@ This repository contains my latest resume in both English and Portuguese, with a
 
 Choose your preferred language:
 
-- 🇺🇸 **[English Resume](https://luannluna.github.io/Resume/)** - [Direct PDF Link](https://github.com/LuannLuna/Resume/raw/main/Luann_Luna_Resume_EN.pdf)
-- 🇧🇷 **[Currículo em Português](https://luannluna.github.io/Resume/)** - [Link Direto para PDF](https://github.com/LuannLuna/Resume/raw/main/Luann_Luna_Resume_PT.pdf)
+- 🇺🇸 **[English Resume](https://luannluna.github.io/Resume/)** - [Direct PDF Link](https://github.com/LuannLuna/Resume/raw/main/PDF/Luann_Luna_Resume_EN.pdf)
+- 🇧🇷 **[Currículo em Português](https://luannluna.github.io/Resume/)** - [Link Direto para PDF](https://github.com/LuannLuna/Resume/raw/main/PDF/Luann_Luna_Resume_PT.pdf)
 
 ## 🏗️ Repository Structure
 
@@ -20,9 +20,10 @@ Choose your preferred language:
 │   └── README.md                   # LaTeX-specific documentation
 ├── .github/workflows/              # GitHub Actions CI/CD
 │   └── build-latex-resume.yml      # Auto-build workflow
+├── PDF/                            # Published PDFs (auto-generated)
+│   ├── Luann_Luna_Resume_EN.pdf   # English PDF
+│   └── Luann_Luna_Resume_PT.pdf   # Portuguese PDF
 ├── index.html                      # GitHub Pages landing page
-├── Luann_Luna_Resume_EN.pdf       # English PDF (auto-generated)
-├── Luann_Luna_Resume_PT.pdf       # Portuguese PDF (auto-generated)
 └── README.md                       # This file
 ```
 
