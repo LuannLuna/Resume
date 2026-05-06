@@ -1,5 +1,8 @@
 *DS_Store
 
+# Local documents and specs
+docs/
+
 # LaTeX auxiliary files (safety net for root directory)
 *.aux
 *.log
@@ -11,3 +14,6 @@
 
 # Ensure PDFs are tracked (negation pattern)
 !*.pdf
+
+# Local tool configuration
+.claude/

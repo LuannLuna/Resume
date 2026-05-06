@@ -12,7 +12,7 @@ São Luís, Brazil (GMT-3) | Remote US/EU/LATAM overlap
 
 Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Leads UIKit-to-SwiftUI migrations, design-system component authoring, and Maestro/XCTest infrastructure for revenue-critical flows.
 
-**Shipped to production:** G1, ge, Dafiti, Kanui, Tricae, Next, StubHub, Petz (1.5M+ users), LTK.
+**Shipped to production:** G1, GE, Dafiti, Kanui, Tricae, Next, StubHub, Petz, LTK.
 
 ---
 
@@ -42,7 +42,7 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK
 - Migrated 4 high-traffic UIKit screens to SwiftUI, reducing per-screen maintenance overhead and enabling the product team to ship UI updates faster
 
 ### iOS Engineer / Digital Solutions Architect
-**Capgemini** | Jul 2021 – Jun 2022
+**Capgemini - contracted to Next** | Jul 2021 – Jun 2022
 
 - Re-architected the authentication flow for a 15M-customer banking app: authored an RFC documenting the existing design and the proposed change, then migrated from upfront permission loading to lazy, user-interaction-driven privilege escalation in RxSwift — cutting login time from 4.2s to 1.5s and improving the first-session experience
 - Embedded with the Chat squad for a month as a cross-team iOS contributor, integrating a new intelligent-assistant SDK alongside the legacy SDK to enable seamless bot-to-human handoff within the same banking app
@@ -50,7 +50,7 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK
 - Participated in the iOS interview loop — conducted technical interviews and evaluated candidate submissions as part of team hiring
 
 ### Mid-Level iOS Developer
-**Dextra Digital** | Oct 2019 – Jun 2021
+**Dextra Digital - contracted to Globo and Dafiti** | Oct 2019 – Jun 2021
 
 - Built geolocation-based news discovery using CoreLocation, MapKit, and GraphQL, doubling average session time from 4.2 to 8.7 minutes
 - Grew test coverage from 18% to 67% using XCTest and Quick/Nimble, preventing 25+ production bugs during 18-month period

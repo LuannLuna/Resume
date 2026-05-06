@@ -1,6 +1,6 @@
 # Makefile for LaTeX Resume (Bilingual: English + Portuguese)
 
-LATEX = pdflatex
+LATEX = xelatex
 BUILD_DIR = build
 
 # Source files
@@ -11,9 +11,9 @@ SOURCE_PT = resume-pt.tex
 OUTPUT_EN = resume-en.pdf
 OUTPUT_PT = resume-pt.pdf
 
-# Final output files in PDF folder
-FINAL_EN = ../PDF/Luann_Luna_Resume_EN.pdf
-FINAL_PT = ../PDF/Luann_Luna_Resume_PT.pdf
+# Final output files in pdf folder
+FINAL_EN = ../pdf/Luann_Luna_Resume_EN.pdf
+FINAL_PT = ../pdf/Luann_Luna_Resume_PT.pdf
 
 .PHONY: all en pt clean log help
 
@@ -23,11 +23,9 @@ all: en pt
 # Build English version
 en:
 	@echo "Building English resume PDF..."
-	@mkdir -p $(BUILD_DIR) ../PDF
-	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_EN) > /dev/null 2>&1 || \
-		(echo "First pass completed with warnings (expected)"; true)
-	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_EN) > /dev/null 2>&1 || \
-		(echo "Second pass completed"; true)
+	@mkdir -p $(BUILD_DIR) ../pdf
+	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_EN) > /dev/null 2>&1
+	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_EN) > /dev/null 2>&1
 	@if [ -f $(BUILD_DIR)/$(OUTPUT_EN) ]; then \
 		cp $(BUILD_DIR)/$(OUTPUT_EN) $(FINAL_EN); \
 		echo "Success! English PDF generated at:"; \
@@ -42,11 +40,9 @@ en:
 # Build Portuguese version
 pt:
 	@echo "Building Portuguese resume PDF..."
-	@mkdir -p $(BUILD_DIR) ../PDF
-	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_PT) > /dev/null 2>&1 || \
-		(echo "First pass completed with warnings (expected)"; true)
-	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_PT) > /dev/null 2>&1 || \
-		(echo "Second pass completed"; true)
+	@mkdir -p $(BUILD_DIR) ../pdf
+	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_PT) > /dev/null 2>&1
+	@$(LATEX) -output-directory=$(BUILD_DIR) -interaction=nonstopmode $(SOURCE_PT) > /dev/null 2>&1
 	@if [ -f $(BUILD_DIR)/$(OUTPUT_PT) ]; then \
 		cp $(BUILD_DIR)/$(OUTPUT_PT) $(FINAL_PT); \
 		echo "Success! Portuguese PDF generated at:"; \

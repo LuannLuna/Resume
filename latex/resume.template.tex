@@ -1,0 +1,197 @@
+% ============================================================
+% RESUME TEMPLATE — Luann Luna
+% ============================================================
+%
+% SOURCE OF TRUTH: resume-en.md
+% GENERATED FILES: resume-en.tex (English), resume-pt.tex (Portuguese)
+%
+% HOW TO USE:
+%   Copy this file and replace every %%PLACEHOLDER%% with the
+%   appropriate content for the target language. Refer to the
+%   PLACEHOLDER REFERENCE section below for guidance.
+%
+% COMPILATION:
+%   xelatex resume-en.tex   (or resume-pt.tex)
+%   Run twice to resolve cross-references.
+%   Use `make en`, `make pt`, or `make all` via the Makefile.
+%
+% PLACEHOLDER REFERENCE:
+%
+%   %%LANG_SETUP%%
+%       EN  → (empty — remove this line entirely)
+%       PT  → \usepackage{polyglossia}
+%              \setmainlanguage{portuguese}
+%
+%   %%PDF_TITLE%%
+%       EN  → Luann Luna - Resume
+%       PT  → Luann Luna - Currículo
+%
+%   %%PDF_SUBJECT%%
+%       EN  → Resume
+%       PT  → Currículo
+%
+%   %%PDF_KEYWORDS%%
+%       EN  → iOS, Software Engineer, Swift
+%       PT  → iOS, Engenheiro de Software, Swift
+%
+%   %%HEADER_LOCATION%%
+%       EN  → São Luís, Brazil (GMT-3) $|$ Remote US/EU/LATAM overlap
+%       PT  → São Luís, Brasil (GMT-3) $|$ Remoto com overlap US/EU/LATAM
+%
+%   %%HEADER_TITLE%%
+%       EN  → Senior iOS Software Engineer
+%       PT  → Senior iOS Software Engineer   (keep in English)
+%
+%   %%SECTION_SUMMARY%%
+%       EN  → Professional Summary
+%       PT  → Resumo Profissional
+%
+%   %%SUMMARY_BODY%%
+%       Full summary paragraph (translated).
+%
+%   %%SHIPPED_LABEL%%
+%       EN  → Shipped to production:
+%       PT  → Apps em produção:
+%
+%   %%SHIPPED_LIST%%
+%       Comma-separated list of shipped apps/products.
+%
+%   %%SECTION_EXPERIENCE%%
+%       EN  → Experience
+%       PT  → Experiência
+%
+%   %%EXPERIENCE_ENTRIES%%
+%       One or more \resumeSubheading + \begin{itemize}...\end{itemize} blocks.
+%       See the pattern in the EXPERIENCE ENTRY PATTERN section below.
+%
+%   %%SECTION_EDUCATION%%
+%       EN  → Education
+%       PT  → Formação
+%
+%   %%EDUCATION_ENTRIES%%
+%       One or more \resumeSubheading blocks (no bullet list needed).
+%
+%   %%SECTION_SKILLS%%
+%       EN  → Technical Skills
+%       PT  → Habilidades Técnicas
+%
+%   %%SKILLS_ENTRIES%%
+%       One \item per skill category. See the SKILLS ENTRY PATTERN below.
+%
+% ============================================================
+% EXPERIENCE ENTRY PATTERN:
+%
+%   \resumeSubheading
+%       {Job Title}{Date Range}
+%       {Company / Context}{}
+%       \begin{itemize}
+%           \resumeItem{Bullet one.}
+%           \resumeItem{Bullet two.}
+%       \end{itemize}
+%
+% SKILLS ENTRY PATTERN:
+%
+%   \item \textbf{Category Label:} skill, skill, skill
+%
+% ============================================================
+
+\documentclass[11pt,letterpaper]{article}
+
+% ----- Core packages -----
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fontspec}
+%%LANG_SETUP%%
+
+% ----- Font -----
+\IfFontExistsTF{Inter}
+  {\setmainfont{Inter}[Scale=0.95]}
+  {\renewcommand{\familydefault}{\sfdefault}}
+
+% ----- PDF metadata -----
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdfauthor={Luann Luna},
+    pdftitle={%%PDF_TITLE%%},
+    pdfsubject={%%PDF_SUBJECT%%},
+    pdfkeywords={%%PDF_KEYWORDS%%}
+}
+
+% ----- Section heading style -----
+\titleformat{\section}
+    {\large\bfseries}
+    {}
+    {0pt}
+    {}
+    [\titlerule]
+
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% ----- Custom commands -----
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item{#1}
+}
+
+% ----- Page style -----
+\pagestyle{empty}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+
+\begin{document}
+
+%------- HEADER -------
+\begin{center}
+    {\LARGE \textbf{Luann Luna}} \\
+    \vspace{0.5em}
+    %%HEADER_TITLE%% \\
+    \vspace{0.2em}
+    %%HEADER_LOCATION%% \\
+    \vspace{0.3em}
+    +55 98 98176-4061 $|$
+    \href{mailto:luann.marques@gmail.com}{luann.marques@gmail.com} $|$
+    \href{https://linkedin.com/in/luannluna}{linkedin.com/in/luannluna} $|$
+    \href{https://github.com/LuannLuna}{github.com/LuannLuna}
+\end{center}
+
+\vspace{0.5em}
+
+%------- SUMMARY -------
+\section*{%%SECTION_SUMMARY%%}
+%%SUMMARY_BODY%%
+
+\vspace{0.35em}
+\noindent\textbf{%%SHIPPED_LABEL%%} %%SHIPPED_LIST%%
+
+%------- EXPERIENCE -------
+\section*{%%SECTION_EXPERIENCE%%}
+
+\begin{itemize}[leftmargin=0.15in]
+%%EXPERIENCE_ENTRIES%%
+\end{itemize}
+
+%------- EDUCATION -------
+\section*{%%SECTION_EDUCATION%%}
+
+\begin{itemize}[leftmargin=0.15in]
+%%EDUCATION_ENTRIES%%
+\end{itemize}
+
+%------- SKILLS -------
+\section*{%%SECTION_SKILLS%%}
+
+\begin{itemize}[leftmargin=0.15in]
+%%SKILLS_ENTRIES%%
+\end{itemize}
+
+\end{document}
