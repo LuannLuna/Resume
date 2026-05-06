@@ -2,8 +2,7 @@
 
 **Senior iOS Software Engineer**
 
-São Luís, Brazil | Open to Remote (US/EU/LATAM)
-English: B2 | Portuguese: Native
+São Luís, Brazil (GMT-3) | Remote US/EU/LATAM overlap
 
 +55 98 98176-4061 | [luann.marques@gmail.com](mailto:luann.marques@gmail.com) | [linkedin.com/in/luannluna](https://linkedin.com/in/luannluna) | [github.com/LuannLuna](https://github.com/LuannLuna)
 
@@ -11,7 +10,9 @@ English: B2 | Portuguese: Native
 
 ## Professional Summary
 
-Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Lead UIKit-to-SwiftUI migrations, design-system component authorship, and Maestro/XCTest infrastructure for revenue-critical flows.
+Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Leads UIKit-to-SwiftUI migrations, design-system component authoring, and Maestro/XCTest infrastructure for revenue-critical flows.
+
+**Shipped to production:** G1, ge, Dafiti, Kanui, Tricae, Next, StubHub, Petz (1.5M+ users), LTK.
 
 ---
 
@@ -80,4 +81,4 @@ Federal University of Maranhão (UFMA)
 - **Architecture & Modularization:** Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules)
 - **Quality & Performance:** XCTest, Swift Testing, Maestro (end-to-end), Instruments
 - **Release & Tooling:** Fastlane, Bitrise, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Remote Config)
-- **APIs & Platform:** GraphQL, CoreLocation, MapKit
+- **APIs & Platform:** REST APIs, GraphQL, CoreLocation, MapKit
