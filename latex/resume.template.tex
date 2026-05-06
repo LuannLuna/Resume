@@ -15,6 +15,16 @@
 %   Run twice to resolve cross-references.
 %   Use `make en`, `make pt`, or `make all` via the Makefile.
 %
+% ============================================================
+% FORMATTING SPEC (canonical — match these values in all generated files)
+%
+%   Margins ............. 0.70in (geometry package)
+%   Section spacing ..... \titlespacing*{\section}{0pt}{10pt}{4pt}
+%   Item gap ............ itemsep=1pt, topsep=2pt
+%   Header vspace ....... 0.4em after name, 0.4em before summary
+%   Shipped vspace ...... 0.3em before shipped line
+%
+% ============================================================
 % PLACEHOLDER REFERENCE:
 %
 %   %%LANG_SETUP%%
@@ -62,7 +72,7 @@
 %
 %   %%EXPERIENCE_ENTRIES%%
 %       One or more \resumeSubheading + \begin{itemize}...\end{itemize} blocks.
-%       See the pattern in the EXPERIENCE ENTRY PATTERN section below.
+%       See the EXPERIENCE ENTRY PATTERN below.
 %
 %   %%SECTION_EDUCATION%%
 %       EN  → Education
@@ -98,7 +108,7 @@
 \documentclass[11pt,letterpaper]{article}
 
 % ----- Core packages -----
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.70in]{geometry}     % Tuned for 2-page output
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
@@ -129,7 +139,7 @@
     {}
     [\titlerule]
 
-\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{10pt}{4pt}    % Tuned for 2-page output
 
 % ----- Custom commands -----
 \newcommand{\resumeSubheading}[4]{
@@ -146,14 +156,14 @@
 
 % ----- Page style -----
 \pagestyle{empty}
-\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=2pt}    % Tuned for 2-page output
 
 \begin{document}
 
 %------- HEADER -------
 \begin{center}
     {\LARGE \textbf{Luann Luna}} \\
-    \vspace{0.5em}
+    \vspace{0.4em}
     %%HEADER_TITLE%% \\
     \vspace{0.2em}
     %%HEADER_LOCATION%% \\
@@ -164,13 +174,13 @@
     \href{https://github.com/LuannLuna}{github.com/LuannLuna}
 \end{center}
 
-\vspace{0.5em}
+\vspace{0.4em}
 
 %------- SUMMARY -------
 \section*{%%SECTION_SUMMARY%%}
 %%SUMMARY_BODY%%
 
-\vspace{0.35em}
+\vspace{0.3em}
 \noindent\textbf{%%SHIPPED_LABEL%%} %%SHIPPED_LIST%%
 
 %------- EXPERIENCE -------

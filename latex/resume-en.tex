@@ -1,16 +1,18 @@
 \documentclass[11pt,letterpaper]{article}
 
-% Essential packages
-\usepackage[margin=0.75in]{geometry}     % Page margins
-\usepackage{enumitem}                    % Customized lists
-\usepackage{hyperref}                    % Clickable links
-\usepackage{titlesec}                    % Section title formatting
-\usepackage{fontspec}                    % Modern font support for XeLaTeX
+% ----- Core packages -----
+\usepackage[margin=0.70in]{geometry}     % Tuned for 2-page output
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fontspec}
+
+% ----- Font -----
 \IfFontExistsTF{Inter}
   {\setmainfont{Inter}[Scale=0.95]}
   {\renewcommand{\familydefault}{\sfdefault}}
 
-% Hyperref configuration
+% ----- PDF metadata -----
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -21,18 +23,17 @@
     pdfkeywords={iOS, Software Engineer, Swift}
 }
 
-% Section formatting - classic style with horizontal rule
+% ----- Section heading style -----
 \titleformat{\section}
-    {\large\bfseries}                    % Format
-    {}                                   % Label
-    {0pt}                                % Space between label and title
-    {}                                   % Code before title
-    [\titlerule]                         % Code after title
+    {\large\bfseries}
+    {}
+    {0pt}
+    {}
+    [\titlerule]
 
-% Reduce space after sections
-\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{10pt}{4pt}    % Tuned for 2-page output
 
-% Custom commands for resume entries
+% ----- Custom commands -----
 \newcommand{\resumeSubheading}[4]{
   \item
     \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
@@ -45,18 +46,16 @@
   \item{#1}
 }
 
-% Remove page numbers
+% ----- Page style -----
 \pagestyle{empty}
-
-% Adjust list spacing
-\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=2pt}    % Tuned for 2-page output
 
 \begin{document}
 
 %------- HEADER -------
 \begin{center}
     {\LARGE \textbf{Luann Luna}} \\
-    \vspace{0.5em}
+    \vspace{0.4em}
     Senior iOS Software Engineer \\
     \vspace{0.2em}
     São Luís, Brazil (GMT-3) $|$ Remote US/EU/LATAM overlap \\
@@ -67,14 +66,14 @@
     \href{https://github.com/LuannLuna}{github.com/LuannLuna}
 \end{center}
 
-\vspace{0.5em}
+\vspace{0.4em}
 
-%------- PROFESSIONAL SUMMARY -------
+%------- SUMMARY -------
 \section*{Professional Summary}
 Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Leads UIKit-to-SwiftUI migrations, design-system component authoring, and Maestro/XCTest infrastructure for revenue-critical flows.
 
-\vspace{0.35em}
-\noindent\textbf{Shipped to production:} G1, GE, Dafiti, Kanui, Tricae, Next, StubHub, Petz, LTK.
+\vspace{0.3em}
+\noindent\textbf{Shipped to production:} G1, GE, Dafiti, Kanui, Tricae, Next, Petz, LTK.
 
 %------- EXPERIENCE -------
 \section*{Experience}
@@ -82,61 +81,46 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 20
 \begin{itemize}[leftmargin=0.15in]
     \resumeSubheading
         {Senior iOS Software Engineer}{Oct 2025 -- Apr 2026}
-        {Hi-Tech Talents — contracted to LikeToKnow.It (LTK)}{}
+        {Hi-Tech Talents --- contracted to LikeToKnow.It (LTK)}{}
         \begin{itemize}
-            \resumeItem{Consolidated 3 legacy search endpoints behind a unified async/await data layer in a Swift 6 strict-concurrency codebase, cutting search response time from 900ms to 200ms (-78\%) and eliminating duplicated response-parsing paths across the iOS networking stack}
-            \resumeItem{Designed and shipped 3 new SwiftUI components into the LTK design system, powering the rebuilt search experience end-to-end and positioned for adoption by other feature teams}
-            \resumeItem{Expanded XCTest UI coverage on the search flow and built an end-to-end Maestro suite simulating the full user journey (login $\rightarrow$ tabbar $\rightarrow$ search $\rightarrow$ creator shop), validating cross-screen behavior that unit and UI tests alone could not catch}
+            \resumeItem{Consolidated 3 legacy search endpoints behind a unified async/await data layer in a Swift 6 strict-concurrency codebase, cutting search response time from 900ms to 200ms (-78\%)}
+            \resumeItem{Designed and shipped 3 SwiftUI components into the LTK design system, powering the rebuilt search experience end-to-end and positioned for adoption by other feature teams}
+            \resumeItem{Built an end-to-end Maestro suite simulating the full user journey (login $\rightarrow$ tabbar $\rightarrow$ search $\rightarrow$ creator shop), complementing XCTest UI coverage to validate cross-screen behavior unit tests alone couldn't catch}
         \end{itemize}
 
     \resumeSubheading
-        {Senior iOS Software Engineer}{Dec 2022 -- Sep 2025}
-        {Sebratec — contracted to Petz}{}
+        {Senior iOS Software Engineer}{Aug 2022 -- Sep 2025}
+        {Sebratec --- contracted to Petz}{}
         \begin{itemize}
-            \resumeItem{Architected the loyalty program module (MVVM + Clean Architecture) and aligned rollout with a cross-functional launch campaign; shipped as the first production SwiftUI flow at Petz carrying real business logic (prior SwiftUI use was limited to force-update screens), driving 1,000+ organic sales in the first week}
-            \resumeItem{Pulled into an active war-room for a production incident where the iOS app crashed on launch for all 1.5M+ users; diagnosed the root cause as a misconfigured backend remote-config value, unblocking the backend team's fix and restoring service within $\sim$3 hours}
-            \resumeItem{Triaged and fixed 12 top-occurrence crashes using Crashlytics and Instruments, contributing to a sustained $\sim$99\% crash-free session rate across the 1.5M+ user base}
-            \resumeItem{Championed and led UIKit-to-SwiftUI migration across 8 screens with a 2-developer team, halving feature delivery time from 3 months to 1.5 months and establishing SwiftUI as the team standard}
-            \resumeItem{Reviewed pull requests from other iOS engineers on the team as a senior reviewer, providing architectural and code-quality feedback on ongoing feature work}
-        \end{itemize}
-
-    \resumeSubheading
-        {iOS Engineer (Contract)}{Aug 2022 -- Nov 2022}
-        {Turing — contracted to StubHub}{}
-        \begin{itemize}
-            \resumeItem{Built a new selling module for StubHub's iOS app end-to-end, delivering the seller flow as a self-contained feature area integrated with the existing app}
-            \resumeItem{Expanded unit test coverage from 22\% to 58\% using XCTest, catching 15+ regression bugs during development and raising confidence for faster iteration cycles}
-            \resumeItem{Migrated 4 high-traffic UIKit screens to SwiftUI, reducing per-screen maintenance overhead and enabling the product team to ship UI updates faster}
+            \resumeItem{Architected the loyalty program module (MVVM + Clean Architecture); shipped as Petz's first production SwiftUI flow with real business logic, driving 1,000+ organic sales in week one}
+            \resumeItem{Led war-room triage for a production crash affecting all 1.5M+ users --- diagnosed a misconfigured remote config value and restored service in $\sim$3 hours; triaged 12 top-occurrence crashes via Crashlytics and Instruments, sustaining $\sim$99\% crash-free sessions}
+            \resumeItem{Led UIKit-to-SwiftUI migration across 8 screens with a 2-dev team, halving feature delivery from 3 months to 1.5 and establishing SwiftUI as team standard}
         \end{itemize}
 
     \resumeSubheading
         {iOS Engineer / Digital Solutions Architect}{Jul 2021 -- Jun 2022}
-        {Capgemini — contracted to Next}{}
+        {Capgemini --- contracted to Next}{}
         \begin{itemize}
-            \resumeItem{Re-architected the authentication flow for a 15M-customer banking app: authored an RFC documenting the existing design and the proposed change, then migrated from upfront permission loading to lazy, user-interaction-driven privilege escalation in RxSwift — cutting login time from 4.2s to 1.5s and improving the first-session experience}
-            \resumeItem{Embedded with the Chat squad for a month as a cross-team iOS contributor, integrating a new intelligent-assistant SDK alongside the legacy SDK to enable seamless bot-to-human handoff within the same banking app}
-            \resumeItem{Mentored a junior iOS developer on Clean Architecture and SwiftUI patterns, navigating the team toward a shared architectural standard through code reviews and pair-programming sessions that improved delivery consistency}
-            \resumeItem{Participated in the iOS interview loop — conducted technical interviews and evaluated candidate submissions as part of team hiring}
+            \resumeItem{Re-architected the auth flow for a 15M-customer banking app: authored an RFC, then migrated from upfront permission loading to lazy, interaction-driven privilege escalation in RxSwift --- cutting login time from 4.2s to 1.5s}
+            \resumeItem{Embedded with the Chat squad as cross-team iOS contributor, integrating a new intelligent-assistant SDK alongside the legacy one to enable seamless bot-to-human handoff within the same app}
+            \resumeItem{Mentored a junior iOS developer on Clean Architecture and SwiftUI through code reviews and pair programming, driving the team toward a shared architectural standard}
         \end{itemize}
 
     \resumeSubheading
         {Mid-Level iOS Developer}{Oct 2019 -- Jun 2021}
-        {Dextra Digital — contracted to Globo and Dafiti}{}
+        {Dextra Digital --- contracted to Globo and Dafiti}{}
         \begin{itemize}
-            \resumeItem{Built geolocation-based news discovery using CoreLocation, MapKit, and GraphQL, doubling average session time from 4.2 to 8.7 minutes}
-            \resumeItem{Grew test coverage from 18\% to 67\% using XCTest and Quick/Nimble, preventing 25+ production bugs during 18-month period}
-            \resumeItem{Co-authored 15+ components in the shared UIKit design system, adopted across 3 product teams and becoming the default elements used when building new screens}
-            \resumeItem{Implemented critical security fixes in Objective-C across Dafiti Group apps (Dafiti, Kanui, Tricae), including session control and cryptographic protections required for credit card compliance}
-            \resumeItem{Contributed to the iOS interview loop during team growth — ran technical interviews and evaluated candidate submissions}
+            \resumeItem{Built geolocation-based news discovery (CoreLocation, MapKit, GraphQL), doubling average session time from 4.2 to 8.7 minutes}
+            \resumeItem{Grew test coverage from 18\% to 67\% with XCTest and Quick/Nimble, preventing 25+ production bugs over 18 months}
+            \resumeItem{Implemented critical security fixes in Objective-C across Dafiti Group apps (Dafiti, Kanui, Tricae) --- session control and cryptographic protections required for credit card compliance}
         \end{itemize}
 
     \resumeSubheading
         {Junior iOS Developer}{Jul 2018 -- Sep 2019}
         {Verité Soluções}{}
         \begin{itemize}
-            \resumeItem{Built 3 interconnected iOS applications for business management using Swift and UIKit, digitizing workflows and supporting 500+ daily operations}
-            \resumeItem{Integrated Firebase Performance Monitoring to baseline load times, identified bottlenecks in critical flows, and applied targeted optimizations that resulted in 45\% faster load times}
-            \resumeItem{Integrated CoreLocation to surface each user's nearest store and available service-scheduling slots, paired with push notifications that drove a 40\% lift in daily active usage}
+            \resumeItem{Built 3 interconnected iOS apps for business management (Swift, UIKit), supporting 500+ daily operations}
+            \resumeItem{Integrated CoreLocation for nearest-store discovery paired with push notifications (40\% DAU lift), and applied Firebase Performance Monitoring optimizations for 45\% faster load times}
         \end{itemize}
 \end{itemize}
 
@@ -150,7 +134,7 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 20
 
 \end{itemize}
 
-%------- TECHNICAL SKILLS -------
+%------- SKILLS -------
 \section*{Technical Skills}
 
 \begin{itemize}[leftmargin=0.15in]
