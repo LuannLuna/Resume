@@ -5,8 +5,12 @@
 \usepackage{enumitem}                    % Customized lists
 \usepackage{hyperref}                    % Clickable links
 \usepackage{titlesec}                    % Section title formatting
-\usepackage[utf8]{inputenc}              % UTF-8 encoding
-\usepackage[T1]{fontenc}                 % Font encoding
+\usepackage{fontspec}                    % Modern font support for XeLaTeX
+\IfFontExistsTF{Inter}
+  {\setmainfont{Inter}[Scale=0.95]}
+  {\renewcommand{\familydefault}{\sfdefault}}
+\usepackage{polyglossia}
+\setmainlanguage{portuguese}
 
 % Hyperref configuration
 \hypersetup{
@@ -33,7 +37,7 @@
 % Custom commands for resume entries
 \newcommand{\resumeSubheading}[4]{
   \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{#3} & \textit{#4} \\
     \end{tabular*}
@@ -57,7 +61,7 @@
     \vspace{0.5em}
     Senior iOS Software Engineer \\
     \vspace{0.2em}
-    São Luís, Brasil $|$ Aberto a Trabalho Remoto (US/EU/LATAM) \\
+    São Luís, Brasil (GMT-3) $|$ Remoto com overlap US/EU/LATAM \\
     \vspace{0.3em}
     +55 98 98176-4061 $|$
     \href{mailto:luann.marques@gmail.com}{luann.marques@gmail.com} $|$
@@ -70,6 +74,9 @@
 %------- RESUMO PROFISSIONAL -------
 \section*{Resumo Profissional}
 Engenheiro iOS Sênior (7+ anos) que reduziu em 78\% a latência de busca (900ms $\rightarrow$ 200ms) na LTK e liderou a triagem em war-room de um crash que bloqueava o lançamento e impactava mais de 1,5M de usuários da Petz. Forte atuação em Swift 6 com strict concurrency, SwiftUI + Observation e modularização por feature com SPM. Lidera migrações de UIKit para SwiftUI, autoria de componentes de design system e infraestrutura de testes com Maestro/XCTest para fluxos críticos de receita.
+
+\vspace{0.35em}
+\noindent\textbf{Apps em produção:} G1, ge, Dafiti, Kanui, Tricae, Next, StubHub, Petz (1,5M+ usuários), LTK.
 
 %------- EXPERIÊNCIA -------
 \section*{Experiência}
@@ -154,7 +161,7 @@ Engenheiro iOS Sênior (7+ anos) que reduziu em 78\% a latência de busca (900ms
     \item \textbf{Arquitetura e Modularização:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules)
     \item \textbf{Qualidade e Performance:} XCTest, Swift Testing, Maestro (end-to-end), Instruments
     \item \textbf{Release e Tooling:} Fastlane, Bitrise, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Remote Config)
-    \item \textbf{APIs e Plataforma:} GraphQL, CoreLocation, MapKit
+    \item \textbf{APIs e Plataforma:} REST APIs, GraphQL, CoreLocation, MapKit
 \end{itemize}
 
 \end{document}

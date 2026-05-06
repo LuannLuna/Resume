@@ -5,8 +5,10 @@
 \usepackage{enumitem}                    % Customized lists
 \usepackage{hyperref}                    % Clickable links
 \usepackage{titlesec}                    % Section title formatting
-\usepackage[utf8]{inputenc}              % UTF-8 encoding
-\usepackage[T1]{fontenc}                 % Font encoding
+\usepackage{fontspec}                    % Modern font support for XeLaTeX
+\IfFontExistsTF{Inter}
+  {\setmainfont{Inter}[Scale=0.95]}
+  {\renewcommand{\familydefault}{\sfdefault}}
 
 % Hyperref configuration
 \hypersetup{
@@ -33,7 +35,7 @@
 % Custom commands for resume entries
 \newcommand{\resumeSubheading}[4]{
   \item
-    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{#3} & \textit{#4} \\
     \end{tabular*}
@@ -57,7 +59,7 @@
     \vspace{0.5em}
     Senior iOS Software Engineer \\
     \vspace{0.2em}
-    São Luís, Brazil $|$ Open to Remote (US/EU/LATAM) \\
+    São Luís, Brazil (GMT-3) $|$ Remote US/EU/LATAM overlap \\
     \vspace{0.3em}
     +55 98 98176-4061 $|$
     \href{mailto:luann.marques@gmail.com}{luann.marques@gmail.com} $|$
@@ -69,7 +71,10 @@
 
 %------- PROFESSIONAL SUMMARY -------
 \section*{Professional Summary}
-Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Lead UIKit-to-SwiftUI migrations, design-system component authorship, and Maestro/XCTest infrastructure for revenue-critical flows.
+Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and feature-module SPM. Leads UIKit-to-SwiftUI migrations, design-system component authoring, and Maestro/XCTest infrastructure for revenue-critical flows.
+
+\vspace{0.35em}
+\noindent\textbf{Shipped to production:} G1, ge, Dafiti, Kanui, Tricae, Next, StubHub, Petz (1.5M+ users), LTK.
 
 %------- EXPERIENCE -------
 \section*{Experience}
@@ -154,7 +159,7 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78\% (900ms $\rightarrow$ 20
     \item \textbf{Architecture \& Modularization:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules)
     \item \textbf{Quality \& Performance:} XCTest, Swift Testing, Maestro (end-to-end), Instruments
     \item \textbf{Release \& Tooling:} Fastlane, Bitrise, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Remote Config)
-    \item \textbf{APIs \& Platform:} GraphQL, CoreLocation, MapKit
+    \item \textbf{APIs \& Platform:} REST APIs, GraphQL, CoreLocation, MapKit
 \end{itemize}
 
 \end{document}
