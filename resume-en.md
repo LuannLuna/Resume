@@ -10,7 +10,7 @@ São Luís, Brazil (GMT-3) | Remote US/EU/LATAM overlap
 
 ## Professional Summary
 
-Senior iOS Engineer (7+ yrs) leading a ~54k-line UIKit-to-SwiftUI migration at BeSafe and owning its networking, security, and background-execution architecture end to end. Previously cut search latency 78% (900ms → 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and ADR-driven architecture, plus hands-on ownership of testing (XCTest, Swift Testing, Maestro) and CI pipelines.
+Senior iOS Engineer (7+ yrs) leading a UIKit-to-SwiftUI migration at BeSafe and owning its networking, security, and background-execution architecture end to end. Previously cut search latency 78% (900ms → 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and ADR-driven architecture, plus hands-on ownership of testing (XCTest, Swift Testing, Maestro) and CI pipelines.
 
 **Shipped to production:** G1, GE, Dafiti, Kanui, Tricae, Next, Petz, LTK.
 
@@ -21,7 +21,7 @@ Senior iOS Engineer (7+ yrs) leading a ~54k-line UIKit-to-SwiftUI migration at B
 ### Senior iOS Software Engineer
 **BeSafe** | Jun 2026 – Present
 
-- Led the incremental migration of a ~54k-line Swift codebase from UIKit/MVVM-C to SwiftUI — NavigationStack routers, @Observable state, and async/await throughout — including a tokenized, Figma-generated design-system component library; drove architecture decisions through a formal ADR process (40 records) and team-wide code reviews
+- Led the incremental migration of a Swift codebase from UIKit/MVVM-C to SwiftUI — NavigationStack routers, @Observable state, and async/await throughout — including a tokenized, Figma-generated design-system component library; drove architecture decisions through a formal ADR process and team-wide code reviews
 - Owned the networking, session, and background-execution layers end to end — REST client with interceptors and automatic token refresh, Keychain-backed credentials, APNs/BGTask triggers, and Firebase/RevenueCat SDK integrations — then diagnosed and fixed a cross-process race with the background extension causing deterministic logouts, redesigning token storage into a single-source-of-truth model
 - Built the quality and release pipeline — Swift Testing/snapshot-testing suites plus on-device Maestro end-to-end flows, wired into GitHub Actions PR validation and automated Fastlane/match TestFlight releases — and added structured, PII-redacted Firebase telemetry that turned unreproducible field bugs into queryable data, diagnosing and fixing network-recovery failures after Wi-Fi/cellular handovers
 
