@@ -35,9 +35,9 @@ Senior iOS Engineer (7+ yrs) who cut search latency 78% (900ms → 200ms) at LTK
 ### iOS Engineer / Digital Solutions Architect
 **Capgemini — contracted to Next** | Jul 2021 – Jun 2022
 
-- Re-architected the auth flow for a 15M-customer banking app: authored an RFC, then migrated from upfront permission loading to lazy, interaction-driven privilege escalation in RxSwift — cutting login time from 4.2s to 1.5s
-- Embedded with the Chat squad as cross-team iOS contributor, integrating a new intelligent-assistant SDK alongside the legacy one to enable seamless bot-to-human handoff within the same app
-- Mentored a junior iOS developer on Clean Architecture and SwiftUI through code reviews and pair programming, driving the team toward a shared architectural standard
+- Prototyped a redesigned authentication flow in RxSwift at NEXT, moving from upfront permission loading to on-demand privilege escalation; aligned the design with a Principal Engineer from the client and produced UML and sequence diagrams of the login lifecycle, delivered as part of the proposal
+- Paired with the Chat squad on the integration of a new SDK powering Bia, NEXT's virtual assistant, contributing through code reviews and bug triage to support a seamless handoff between the bot and human support agents
+- Supported a junior iOS developer's day-to-day growth through pair programming, code reviews, and technical discussions on architecture patterns, development techniques, and software design
 
 ### Mid-Level iOS Developer
 **Dextra Digital — contracted to Globo and Dafiti** | Oct 2019 – Jun 2021
