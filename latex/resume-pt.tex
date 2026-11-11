@@ -50,7 +50,7 @@
 
 % ----- Page style -----
 \pagestyle{empty}
-\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=2pt}    % Tuned for 2-page output
+\setlist[itemize]{leftmargin=*, itemsep=0pt, topsep=1pt}    % Tuned for 2-page output
 
 \begin{document}
 
@@ -87,7 +87,8 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         \begin{itemize}
             \resumeItem{Liderou a migração incremental de uma base de código Swift de UIKit/MVVM-C para SwiftUI --- NavigationStack, estado com @Observable e async/await em toda a base --- incluindo uma biblioteca de componentes de design system tokenizada e gerada a partir do Figma; conduziu decisões de arquitetura por meio de um processo formal de ADR e code reviews em todo o time}
             \resumeItem{Assumiu de ponta a ponta as camadas de rede, sessão e execução em background --- cliente REST com interceptors e renovação automática de token, credenciais protegidas via Keychain, gatilhos de APNs/BGTask e integrações de SDKs como Firebase/RevenueCat --- e diagnosticou e corrigiu uma race condition entre o app e sua extensão em background que causava logouts determinísticos, redesenhando o armazenamento de token para um modelo de fonte única de verdade}
-            \resumeItem{Construiu o pipeline de qualidade e release --- suítes com Swift Testing/snapshot testing e fluxos end-to-end em Maestro em dispositivos físicos, integrados ao GitHub Actions para validação de PRs e releases automatizados no TestFlight via Fastlane/match --- e adicionou telemetria estruturada e com PII redigida no Firebase, transformando bugs de campo não reproduzíveis em dados consultáveis, usada para diagnosticar e corrigir falhas de recuperação de rede após handovers de Wi-Fi/celular}
+            \resumeItem{Construiu o pipeline de qualidade e release --- suítes com Swift Testing/snapshot testing, fluxos end-to-end em Maestro em dispositivos físicos, validação de PRs no GitHub Actions e releases automatizados no TestFlight via Fastlane/match --- além de telemetria estruturada no Firebase com dados pessoais removidos, transformando bugs de campo não reproduzíveis em dados consultáveis usados para diagnosticar falhas de recuperação de rede em handovers de Wi-Fi/celular}
+            \resumeItem{Atuou no Xcode entre telas UIKit e SwiftUI, distribuindo features como Swift Packages}
         \end{itemize}
 
     \resumeSubheading
@@ -97,6 +98,7 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
             \resumeItem{Consolidou 3 endpoints legados de busca em uma camada de dados unificada com async/await em Swift 6 com strict concurrency, reduzindo o tempo de resposta de 900ms para 200ms (-78\%)}
             \resumeItem{Projetou e entregou 3 componentes SwiftUI para o design system da LTK, sustentando a nova experiência de busca de ponta a ponta e posicionados para adoção por outros times de feature}
             \resumeItem{Construiu uma suíte end-to-end em Maestro simulando a jornada completa do usuário (login $\rightarrow$ tabbar $\rightarrow$ busca $\rightarrow$ creator shop), complementando a cobertura XCTest para validar comportamento entre telas que testes isolados não capturam}
+            \resumeItem{Entregou no Xcode features em UIKit e SwiftUI, compartilhando componentes como Swift Packages}
         \end{itemize}
 
     \resumeSubheading
@@ -121,7 +123,7 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Desenvolvedor iOS Pleno}{Out 2019 -- Jun 2021}
         {Dextra Digital --- alocado na Globo e na Dafiti}{}
         \begin{itemize}
-            \resumeItem{Construiu feature de descoberta de notícias por geolocalização (CoreLocation, MapKit, GraphQL), dobrando o tempo médio de sessão de 4,2 para 8,7 minutos}
+            \resumeItem{Construiu no Xcode, com UIKit em Storyboard, a descoberta de notícias por geolocalização (CoreLocation, MapKit, GraphQL), dobrando o tempo médio de sessão de 4,2 para 8,7 minutos}
             \resumeItem{Ampliou a cobertura de testes de 18\% para 67\% com XCTest e Quick/Nimble, evitando mais de 25 bugs em produção ao longo de 18 meses}
             \resumeItem{Implementou correções de segurança críticas em Objective-C nos apps do Grupo Dafiti (Dafiti, Kanui, Tricae) --- controle de sessão e proteções criptográficas exigidas para compliance com cartões de crédito}
         \end{itemize}
@@ -130,7 +132,7 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Desenvolvedor iOS Júnior}{Jul 2018 -- Set 2019}
         {Verité Soluções}{}
         \begin{itemize}
-            \resumeItem{Desenvolveu 3 aplicativos iOS interconectados para gestão empresarial (Swift, UIKit), suportando mais de 500 operações diárias}
+            \resumeItem{Desenvolveu 3 aplicativos iOS interconectados para gestão empresarial (Swift, UIKit, Storyboard), suportando mais de 500 operações diárias}
             \resumeItem{Integrou CoreLocation para exibir a loja mais próxima com push notifications (aumento de 40\% no uso diário) e aplicou otimizações via Firebase Performance Monitoring para 45\% de redução no tempo de carregamento}
         \end{itemize}
 \end{itemize}
