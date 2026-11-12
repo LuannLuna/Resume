@@ -1,7 +1,7 @@
 \documentclass[11pt,letterpaper]{article}
 
 % ----- Core packages -----
-\usepackage[margin=0.70in]{geometry}     % Tuned for 2-page output
+\usepackage[margin=0.60in]{geometry}     % Tuned for 2-page output
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
@@ -65,30 +65,34 @@
     +55 98 98176-4061 $|$
     \href{mailto:luann.marques@gmail.com}{luann.marques@gmail.com} $|$
     \href{https://linkedin.com/in/luannluna}{linkedin.com/in/luannluna} $|$
-    \href{https://github.com/LuannLuna}{github.com/LuannLuna}
+    \href{https://github.com/LuannLuna}{github.com/LuannLuna} $|$
+    \href{https://luannluna.github.io/portfolio/}{luannluna.github.io/portfolio}
 \end{center}
 
 \vspace{0.4em}
 
 %------- RESUMO PROFISSIONAL -------
 \section*{Resumo Profissional}
-Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código de UIKit para SwiftUI na BeSafe e assumindo de ponta a ponta a arquitetura de rede, segurança e execução em background. Anteriormente reduziu em 78\% a latência de busca (900ms $\rightarrow$ 200ms) na LTK e liderou a triagem em war-room de um crash que bloqueava o lançamento e impactava mais de 1,5M de usuários da Petz. Forte atuação em Swift 6 com strict concurrency, SwiftUI + Observation e arquitetura orientada por ADRs, além de atuação direta em testes (XCTest, Swift Testing, Maestro) e pipelines de CI.
+Engenheiro iOS Sênior (8+ anos) que liderou a migração de UIKit para SwiftUI na BeSafe e respondeu de ponta a ponta pela arquitetura de rede, segurança e execução em background. Também reduziu em 78\% a latência de busca (900ms $\rightarrow$ 200ms) na LTK e liderou a triagem em war-room de um crash que bloqueava o lançamento e impactava mais de 1,5M de usuários da Petz. Forte atuação em Swift 6 com strict concurrency, SwiftUI + Observation e arquitetura orientada por ADRs, além de atuação direta em testes (XCTest, Swift Testing, Maestro) e pipelines de CI.
 
 \vspace{0.3em}
-\noindent\textbf{Apps em produção:} G1, GE, Dafiti, Kanui, Tricae, Next, Petz, LTK.
+\noindent\textbf{Apps em produção:} G1, GE, Dafiti, Kanui, Tricae, Next, Petz, LTK, BeSafe.
 
 %------- EXPERIÊNCIA -------
 \section*{Experiência}
 
 \begin{itemize}[leftmargin=0.15in]
     \resumeSubheading
-        {Senior iOS Software Engineer}{Jun 2026 -- Atual}
-        {BeSafe}{}
+        {Senior iOS Software Engineer}{Jun 2026 -- Nov 2026}
+        {BeSafe --- contrato (lançamento na App Store)}{}
         \begin{itemize}
-            \resumeItem{Liderou a migração incremental de uma base de código Swift de UIKit/MVVM-C para SwiftUI --- NavigationStack, estado com @Observable e async/await em toda a base --- incluindo uma biblioteca de componentes de design system tokenizada e gerada a partir do Figma; conduziu decisões de arquitetura por meio de um processo formal de ADR e code reviews em todo o time}
-            \resumeItem{Assumiu de ponta a ponta as camadas de rede, sessão e execução em background --- cliente REST com interceptors e renovação automática de token, credenciais protegidas via Keychain, gatilhos de APNs/BGTask e integrações de SDKs como Firebase/RevenueCat --- e diagnosticou e corrigiu uma race condition entre o app e sua extensão em background que causava logouts determinísticos, redesenhando o armazenamento de token para um modelo de fonte única de verdade}
-            \resumeItem{Construiu o pipeline de qualidade e release --- suítes com Swift Testing/snapshot testing, fluxos end-to-end em Maestro em dispositivos físicos, validação de PRs no GitHub Actions e releases automatizados no TestFlight via Fastlane/match --- além de telemetria estruturada no Firebase com dados pessoais removidos, transformando bugs de campo não reproduzíveis em dados consultáveis usados para diagnosticar falhas de recuperação de rede em handovers de Wi-Fi/celular}
-            \resumeItem{Atuou no Xcode entre telas UIKit e SwiftUI, distribuindo features como Swift Packages}
+            \resumeItem{Entregou o app na App Store dentro do prazo de lançamento acordado em contrato}
+            \resumeItem{Liderou a migração incremental de uma base de código Swift de UIKit/MVC para SwiftUI com Clean Architecture --- NavigationStack, estado com @Observable e async/await em toda a base --- chegando a 200+ views SwiftUI e apenas 5 controllers UIKit remanescentes}
+            \resumeItem{Modularizou o app em 25 Swift Packages locais, com fronteiras entre módulos validadas no CI e uma biblioteca de design system tokenizada e gerada a partir do Figma; conduziu as decisões de arquitetura por um processo formal de ADRs (Architecture Decision Records) e code reviews com todo o time}
+            \resumeItem{Assumiu de ponta a ponta as camadas de rede, sessão e execução em background --- cliente REST com interceptors e renovação automática de token, credenciais protegidas via Keychain, gatilhos de APNs/BGTask e integrações de SDKs como Firebase e RevenueCat}
+            \resumeItem{Diagnosticou e corrigiu uma race condition entre o app e sua extensão em background que causava logouts determinísticos, redesenhando o armazenamento de tokens em torno de uma fonte única de verdade}
+            \resumeItem{Construiu o pipeline de qualidade e release --- 3.000+ testes em Swift Testing, 270 baselines de snapshot, 45+ fluxos end-to-end em Maestro em dispositivos físicos, validação de PRs no GitHub Actions e releases noturnos automatizados no TestFlight via Fastlane/match}
+            \resumeItem{Implementou telemetria estruturada no Firebase, sem dados pessoais, transformando bugs de campo impossíveis de reproduzir em dados consultáveis --- usados para diagnosticar falhas de recuperação de rede nas trocas entre Wi-Fi e celular}
         \end{itemize}
 
     \resumeSubheading
@@ -96,16 +100,15 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Hi-Tech Talents --- alocado na LikeToKnow.It (LTK)}{}
         \begin{itemize}
             \resumeItem{Consolidou 3 endpoints legados de busca em uma camada de dados unificada com async/await em Swift 6 com strict concurrency, reduzindo o tempo de resposta de 900ms para 200ms (-78\%)}
-            \resumeItem{Projetou e entregou 3 componentes SwiftUI para o design system da LTK, sustentando a nova experiência de busca de ponta a ponta e posicionados para adoção por outros times de feature}
+            \resumeItem{Projetou e entregou 3 componentes SwiftUI para o design system da LTK, distribuídos como Swift Packages, que sustentam a nova experiência de busca de ponta a ponta em uma base mista de UIKit e SwiftUI e estão prontos para adoção por outros times de feature}
             \resumeItem{Construiu uma suíte end-to-end em Maestro simulando a jornada completa do usuário (login $\rightarrow$ tabbar $\rightarrow$ busca $\rightarrow$ creator shop), complementando a cobertura XCTest para validar comportamento entre telas que testes isolados não capturam}
-            \resumeItem{Entregou no Xcode features em UIKit e SwiftUI, compartilhando componentes como Swift Packages}
         \end{itemize}
 
     \resumeSubheading
         {Senior iOS Software Engineer}{Ago 2022 -- Set 2025}
         {Sebratec --- alocado na Petz}{}
         \begin{itemize}
-            \resumeItem{Arquitetou o módulo do programa de fidelidade (MVVM + Clean Architecture); entregue como o primeiro fluxo SwiftUI em produção na Petz com lógica de negócio real, gerando mais de 1.000 vendas orgânicas na primeira semana}
+            \resumeItem{Arquitetou o módulo do programa de fidelidade (MVVM + Clean Architecture); primeiro fluxo SwiftUI em produção na Petz com lógica de negócio real, gerando 1.000+ vendas orgânicas na primeira semana}
             \resumeItem{Liderou a triagem em war-room de um crash que afetava todos os 1,5M+ usuários --- diagnosticou um valor mal configurado de remote config e restaurou o serviço em $\sim$3 horas; triou 12 crashes de maior incidência via Crashlytics e Instruments, sustentando $\sim$99\% de sessões sem crash}
             \resumeItem{Liderou a migração de UIKit para SwiftUI em 8 telas com uma equipe de 2 devs, reduzindo o tempo de entrega de 3 meses para 1,5 e consolidando SwiftUI como padrão do time}
         \end{itemize}
@@ -114,9 +117,9 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {iOS Engineer / Digital Solutions Architect}{Jul 2021 -- Jun 2022}
         {Capgemini --- alocado no Next}{}
         \begin{itemize}
-            \resumeItem{Prototipou um novo fluxo de autenticação em RxSwift no NEXT, substituindo o carregamento antecipado de permissões por escalonamento sob demanda; alinhou o desenho da solução com um Principal Engineer do cliente e produziu diagramas UML e de sequência do fluxo de login, entregues como parte da proposta}
-            \resumeItem{Atuou em pareamento com a squad do Chat na integração de um novo SDK para a Bia, assistente virtual do NEXT, contribuindo com code reviews e identificação de bugs para suportar a transição fluida entre o bot e o atendimento humano}
-            \resumeItem{Apoiou o crescimento diário de um desenvolvedor iOS júnior por meio de pair programming, code reviews e discussões técnicas sobre padrões de arquitetura, técnicas de desenvolvimento e design de software}
+            \resumeItem{Prototipou um novo fluxo de autenticação em RxSwift no NEXT, substituindo o carregamento antecipado de permissões por escalonamento sob demanda e reduzindo o tempo de login de 4,2s para 1,5s no ambiente de validação; alinhou a solução com um Principal Engineer do cliente e entregou diagramas UML e de sequência do fluxo de login como parte da proposta}
+            \resumeItem{Trabalhou com a squad do Chat na integração de um novo SDK para a Bia, assistente virtual do NEXT, contribuindo com code reviews e triagem de bugs para a transição fluida entre bot e atendimento humano}
+            \resumeItem{Orientou um desenvolvedor iOS júnior com pair programming, code reviews e discussões técnicas sobre padrões de arquitetura, técnicas de desenvolvimento e design de software}
         \end{itemize}
 
     \resumeSubheading
@@ -124,7 +127,7 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Dextra Digital --- alocado na Globo e na Dafiti}{}
         \begin{itemize}
             \resumeItem{Construiu no Xcode, com UIKit em Storyboard, a descoberta de notícias por geolocalização (CoreLocation, MapKit, GraphQL), dobrando o tempo médio de sessão de 4,2 para 8,7 minutos}
-            \resumeItem{Ampliou a cobertura de testes de 18\% para 67\% com XCTest e Quick/Nimble, evitando mais de 25 bugs em produção ao longo de 18 meses}
+            \resumeItem{Ampliou a cobertura de testes de 18\% para 67\% com XCTest e Quick/Nimble, evitando 25+ bugs em produção em 18 meses}
             \resumeItem{Implementou correções de segurança críticas em Objective-C nos apps do Grupo Dafiti (Dafiti, Kanui, Tricae) --- controle de sessão e proteções criptográficas exigidas para compliance com cartões de crédito}
         \end{itemize}
 
@@ -132,9 +135,22 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Desenvolvedor iOS Júnior}{Jul 2018 -- Set 2019}
         {Verité Soluções}{}
         \begin{itemize}
-            \resumeItem{Desenvolveu 3 aplicativos iOS interconectados para gestão empresarial (Swift, UIKit, Storyboard), suportando mais de 500 operações diárias}
+            \resumeItem{Desenvolveu 3 aplicativos iOS interconectados para gestão empresarial (Swift, UIKit, Storyboard), suportando 500+ operações diárias}
             \resumeItem{Integrou CoreLocation para exibir a loja mais próxima com push notifications (aumento de 40\% no uso diário) e aplicou otimizações via Firebase Performance Monitoring para 45\% de redução no tempo de carregamento}
         \end{itemize}
+\end{itemize}
+
+%------- HABILIDADES TÉCNICAS -------
+\section*{Habilidades Técnicas}
+
+\begin{itemize}[leftmargin=0.15in]
+    \item \textbf{Linguagens e Runtime:} Swift (Swift 6, strict concurrency), Swift Concurrency (async/await), Combine, RxSwift, Objective-C (interop legado)
+    \item \textbf{UI e Estado:} SwiftUI, UIKit, Observation (@Observable), Acessibilidade (VoiceOver, Dynamic Type)
+    \item \textbf{Arquitetura e Modularização:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules), Design Systems (tokens via Figma), ADRs
+    \item \textbf{Qualidade e Performance:} XCTest, Swift Testing, Snapshot Testing, Maestro (end-to-end), Instruments
+    \item \textbf{Release e Tooling:} Fastlane, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Firestore, Remote Config), RevenueCat
+    \item \textbf{APIs e Plataforma:} REST APIs, GraphQL, CoreLocation, MapKit, APNs, Keychain, BGTask
+    \item \textbf{Idiomas:} Português (nativo), Inglês (profissional)
 \end{itemize}
 
 %------- FORMAÇÃO -------
@@ -145,18 +161,6 @@ Engenheiro iOS Sênior (7+ anos) liderando a migração de uma base de código d
         {Bacharelado em Ciência da Computação}{2011 -- 2016}
         {Universidade Federal do Maranhão (UFMA)}{}
 
-\end{itemize}
-
-%------- HABILIDADES TÉCNICAS -------
-\section*{Habilidades Técnicas}
-
-\begin{itemize}[leftmargin=0.15in]
-    \item \textbf{Linguagens e Runtime:} Swift (Swift 6, strict concurrency), Swift Concurrency (async/await), Combine, Objective-C (interop legado)
-    \item \textbf{UI e Estado:} SwiftUI, UIKit, Observation (@Observable), SwiftData, Acessibilidade (VoiceOver, Dynamic Type)
-    \item \textbf{Arquitetura e Modularização:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules), Design Systems (tokens via Figma), ADRs
-    \item \textbf{Qualidade e Performance:} XCTest, Swift Testing, Snapshot Testing, Maestro (end-to-end), Instruments
-    \item \textbf{Release e Tooling:} Fastlane, Bitrise, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Firestore, Remote Config, App Check), RevenueCat
-    \item \textbf{APIs e Plataforma:} REST APIs, GraphQL, CoreLocation, MapKit, APNs, Keychain, BGTask
 \end{itemize}
 
 \end{document}
