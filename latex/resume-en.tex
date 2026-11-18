@@ -7,6 +7,9 @@
 \usepackage{titlesec}
 \usepackage{fontspec}
 
+% ----- Hyphenation (keep product names intact) -----
+\hyphenation{SwiftUI UIKit XCUITest NavigationStack RevenueCat BGTask Keychain}
+
 % ----- Font -----
 \IfFontExistsTF{Inter}
   {\setmainfont{Inter}[Scale=0.95]}
@@ -31,7 +34,7 @@
     {}
     [\titlerule]
 
-\titlespacing*{\section}{0pt}{10pt}{4pt}    % Tuned for 2-page output
+\titlespacing*{\section}{0pt}{7pt}{2pt}    % Tuned for 2-page output
 
 % ----- Custom commands -----
 \newcommand{\resumeSubheading}[4]{
@@ -48,7 +51,7 @@
 
 % ----- Page style -----
 \pagestyle{empty}
-\setlist[itemize]{leftmargin=*, itemsep=1pt, topsep=2pt}    % Tuned for 2-page output
+\setlist[itemize]{leftmargin=*, itemsep=-1pt, topsep=0pt}    % Tuned for 2-page output
 
 \begin{document}
 
@@ -71,94 +74,99 @@
 
 %------- SUMMARY -------
 \section*{Professional Summary}
-Senior iOS Engineer (8+ yrs) who led a UIKit-to-SwiftUI migration at BeSafe and owned its networking, security, and background-execution architecture end to end. Also cut search latency 78\% (900ms $\rightarrow$ 200ms) at LTK and led war-room triage for a launch-blocking crash impacting 1.5M+ Petz users. Deep in Swift 6 strict concurrency, SwiftUI + Observation, and ADR-driven architecture, plus hands-on ownership of testing (XCTest, Swift Testing, Maestro) and CI pipelines.
+Senior iOS Engineer (8+ yrs) who led BeSafe's incremental UIKit$\rightarrow$SwiftUI migration --- 200+ SwiftUI views, 25 Swift Packages, and the networking, session, and background-execution layers behind them --- and shipped it to the App Store on the contractual deadline. Cut search latency 78\% (900ms $\rightarrow$ 200ms) at LTK and led war-room triage for a launch-blocking crash affecting 1.5M+ Petz users. Strong in Swift 6 strict concurrency, SwiftUI + Observation, and ADR-driven architecture, with hands-on ownership of testing (Swift Testing, XCTest, Maestro) and CI/CD.
 
 \vspace{0.3em}
 \noindent\textbf{Shipped to production:} G1, GE, Dafiti, Kanui, Tricae, Next, Petz, LTK, BeSafe.
 
+\vspace{0.3em}
+\noindent\textbf{Public project:} \href{https://github.com/LuannLuna/BudgetLens}{BudgetLens} --- SwiftUI app for exploring a bundled budget snapshot and discussing it with any LLM via a user-supplied API key; layered Swift package, Keychain-isolated credentials, Swift Testing + XCUITest.
+
 %------- EXPERIENCE -------
 \section*{Experience}
 
-\begin{itemize}[leftmargin=0.15in]
+\begin{itemize}[leftmargin=0.15in, label={}]
     \resumeSubheading
         {Senior iOS Software Engineer}{Jun 2026 -- Nov 2026}
-        {BeSafe --- contract (App Store launch)}{}
+        {BeSafe --- contract (first release + App Store approval)}{}
         \begin{itemize}
-            \resumeItem{Shipped the app to the App Store by the contractually agreed launch deadline}
-            \resumeItem{Led the incremental migration of a Swift codebase from UIKit/MVC to SwiftUI with Clean Architecture --- NavigationStack routers, @Observable state, and async/await throughout --- reaching 200+ SwiftUI views with only 5 UIKit controllers remaining}
-            \resumeItem{Modularized the app into 25 local Swift Packages with CI-enforced module boundaries, including a tokenized, Figma-generated design-system library; drove architecture decisions through a formal Architecture Decision Record (ADR) process and team-wide code reviews}
-            \resumeItem{Owned the networking, session, and background-execution layers end to end --- REST client with interceptors and automatic token refresh, Keychain-backed credentials, APNs/BGTask triggers, and Firebase/RevenueCat SDK integrations}
-            \resumeItem{Diagnosed and fixed a cross-process race between the app and its background extension that caused deterministic logouts, redesigning token storage into a single-source-of-truth model}
-            \resumeItem{Built the quality and release pipeline --- 3,000+ Swift Testing cases, 270 snapshot baselines, 45+ on-device Maestro end-to-end flows, GitHub Actions PR validation, and automated nightly Fastlane/match TestFlight releases}
-            \resumeItem{Added structured Firebase telemetry with personal data stripped out, turning unreproducible field bugs into queryable data used to diagnose Wi-Fi/cellular network-recovery failures}
+            \resumeItem{Led the incremental UIKit/MVC $\rightarrow$ SwiftUI + Clean Architecture migration --- NavigationStack routers, \mbox{@Observable} state, async/await --- ending with 200+ SwiftUI views and only 5 UIKit controllers; all SwiftUI views shipped with VoiceOver and Dynamic Type support}
+            \resumeItem{Modularized the app into 25 local Swift Packages with CI-enforced boundaries, including a tokenized, Figma-generated design system and localization-ready strings; set architecture direction through ADRs and team-wide code reviews}
+            \resumeItem{Owned networking, session, and background execution end to end: REST client with interceptors and automatic token refresh, Keychain-backed credentials, APNs/BGTask triggers, and Firebase/RevenueCat integration}
+            \resumeItem{Diagnosed a cross-process race between the app and its background extension that caused deterministic logouts; redesigned token storage into a single source of truth}
+            \resumeItem{Built the quality and release pipeline: 3,000+ Swift Testing cases, 270 snapshot baselines, 45+ on-device Maestro end-to-end flows, GitHub Actions PR validation, and nightly Fastlane/match TestFlight releases}
+            \resumeItem{Instrumented structured Firebase telemetry with PII stripped, turning unreproducible field bugs into queryable data --- used to diagnose Wi-Fi/cellular network-recovery failures}
         \end{itemize}
 
     \resumeSubheading
         {Senior iOS Software Engineer}{Oct 2025 -- Apr 2026}
         {Hi-Tech Talents --- contracted to LikeToKnow.It (LTK)}{}
         \begin{itemize}
-            \resumeItem{Consolidated 3 legacy search endpoints behind a unified async/await data layer in a Swift 6 strict-concurrency codebase, cutting search response time from 900ms to 200ms (-78\%)}
-            \resumeItem{Designed and shipped 3 SwiftUI components into the LTK design system as Swift Packages, powering the rebuilt search experience end-to-end in a mixed UIKit/SwiftUI codebase and positioned for adoption by other feature teams}
-            \resumeItem{Built an end-to-end Maestro suite simulating the full user journey (login $\rightarrow$ tabbar $\rightarrow$ search $\rightarrow$ creator shop), complementing XCTest UI coverage to validate cross-screen behavior unit tests alone couldn't catch}
+            \resumeItem{Consolidated 3 legacy search endpoints behind a unified async/await data layer in a Swift 6 strict-concurrency codebase, cutting search response time 78\% (900ms $\rightarrow$ 200ms)}
+            \resumeItem{Designed and shipped 3 SwiftUI components as Swift Packages in the LTK design system, powering the rebuilt search experience end to end in a mixed UIKit/SwiftUI codebase}
+            \resumeItem{Built an end-to-end Maestro suite covering login $\rightarrow$ tab bar $\rightarrow$ search $\rightarrow$ creator shop, complementing XCUITest coverage and catching cross-screen regressions that unit tests could not}
         \end{itemize}
 
     \resumeSubheading
         {Senior iOS Software Engineer}{Aug 2022 -- Sep 2025}
         {Sebratec --- contracted to Petz}{}
         \begin{itemize}
-            \resumeItem{Architected the loyalty program module (MVVM + Clean Architecture); shipped as Petz's first production SwiftUI flow with real business logic, driving 1,000+ organic sales in week one}
-            \resumeItem{Led war-room triage for a production crash affecting all 1.5M+ users --- diagnosed a misconfigured remote config value and restored service in $\sim$3 hours; triaged 12 top-occurrence crashes via Crashlytics and Instruments, sustaining $\sim$99\% crash-free sessions}
-            \resumeItem{Led UIKit-to-SwiftUI migration across 8 screens with a 2-dev team, halving feature delivery from 3 months to 1.5 and establishing SwiftUI as team standard}
+            \resumeItem{Architected the loyalty program module (MVVM + Clean Architecture) with Combine in a few reactive flows; shipped it as Petz's first production SwiftUI flow with real business logic, driving 1,000+ organic sales in week one}
+            \resumeItem{Led war-room triage for a production crash affecting the full 1.5M+ user base --- traced it to a misconfigured remote config value and restored service in $\sim$3 hours; triaged 12 top-occurrence crashes via Crashlytics and Instruments, sustaining $\sim$99\% crash-free sessions}
+            \resumeItem{Led a UIKit$\rightarrow$SwiftUI migration across 8 screens with a two-developer team, cutting feature delivery time from 3 months to 1.5 and establishing SwiftUI as the team standard}
         \end{itemize}
 
     \resumeSubheading
         {iOS Engineer / Digital Solutions Architect}{Jul 2021 -- Jun 2022}
         {Capgemini --- contracted to Next}{}
         \begin{itemize}
-            \resumeItem{Prototyped a redesigned authentication flow in RxSwift at NEXT, moving from upfront permission loading to on-demand privilege escalation and cutting login time from 4.2s to 1.5s in the validation environment; aligned the design with a client Principal Engineer and delivered UML and sequence diagrams of the login lifecycle as part of the proposal}
-            \resumeItem{Partnered with the Chat squad to integrate a new SDK powering Bia, NEXT's virtual assistant, contributing code reviews and bug triage that supported a seamless handoff between the bot and human support agents}
-            \resumeItem{Mentored a junior iOS developer through pair programming, code reviews, and technical discussions on architecture patterns, development techniques, and software design}
+            \resumeItem{Prototyped a redesigned RxSwift authentication flow at NEXT, replacing upfront permission loading with on-demand privilege escalation and cutting login time from 4.2s to 1.5s in the validation environment. Aligned the design with the client's Principal Engineer and documented the login lifecycle in UML and sequence diagrams}
+            \resumeItem{Partnered with the Chat squad to integrate the SDK behind Bia, NEXT's virtual assistant, contributing code review and bug triage for the bot-to-human handoff}
+            \resumeItem{Mentored a junior iOS developer through pair programming, code reviews, and architecture discussions}
         \end{itemize}
 
     \resumeSubheading
         {Mid-Level iOS Developer}{Oct 2019 -- Jun 2021}
         {Dextra Digital --- contracted to Globo and Dafiti}{}
         \begin{itemize}
-            \resumeItem{Built geolocation-based news discovery in Xcode using UIKit and Storyboards (CoreLocation, MapKit, GraphQL), doubling average session time from 4.2 to 8.7 minutes}
-            \resumeItem{Grew test coverage from 18\% to 67\% with XCTest and Quick/Nimble, preventing 25+ production bugs over 18 months}
-            \resumeItem{Implemented critical security fixes in Objective-C across Dafiti Group apps (Dafiti, Kanui, Tricae) --- session control and cryptographic protections required for credit card compliance}
+            \resumeItem{Built geolocation-based news discovery with UIKit, CoreLocation, MapKit, and GraphQL, doubling average session time from 4.2 to 8.7 minutes}
+            \resumeItem{Raised test coverage from 18\% to 67\% with XCTest and Quick/Nimble, preventing 25+ production bugs over 18 months}
+            \resumeItem{Implemented security fixes in Objective-C across Dafiti, Kanui, and Tricae --- session control and cryptographic protections required for credit-card compliance}
         \end{itemize}
 
     \resumeSubheading
         {Junior iOS Developer}{Jul 2018 -- Sep 2019}
         {Verité Soluções}{}
         \begin{itemize}
-            \resumeItem{Built 3 interconnected iOS apps for business management (Swift, UIKit, Storyboard), supporting 500+ daily operations}
-            \resumeItem{Integrated CoreLocation for nearest-store discovery paired with push notifications (40\% DAU lift), and applied Firebase Performance Monitoring optimizations for 45\% faster load times}
+            \resumeItem{Built 3 interconnected iOS apps for business management (Swift, UIKit, Storyboards), supporting 500+ daily operations}
+            \resumeItem{Integrated CoreLocation for nearest-store discovery and push notifications (40\% DAU lift); cut load times 45\% with Firebase Performance Monitoring}
         \end{itemize}
 \end{itemize}
 
 %------- SKILLS -------
 \section*{Technical Skills}
 
-\begin{itemize}[leftmargin=0.15in]
+\begin{itemize}[leftmargin=0.15in, label={}]
     \item \textbf{Languages \& Runtime:} Swift (Swift 6, strict concurrency), Swift Concurrency (async/await), Combine, RxSwift, Objective-C (legacy interop)
-    \item \textbf{UI \& State:} SwiftUI, UIKit, Observation (@Observable), Accessibility (VoiceOver, Dynamic Type)
-    \item \textbf{Architecture \& Modularization:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, SOLID, Swift Package Manager (feature modules), Design Systems (Figma-driven tokens), ADRs
-    \item \textbf{Quality \& Performance:} XCTest, Swift Testing, Snapshot Testing, Maestro (end-to-end), Instruments
-    \item \textbf{Release \& Tooling:} Fastlane, GitHub Actions, SwiftLint, Firebase (Crashlytics, Analytics, Firestore, Remote Config), RevenueCat
+    \item \textbf{UI \& State:} SwiftUI, UIKit, Observation (\mbox{@Observable}), Accessibility (VoiceOver, Dynamic Type), Localization (i18n)
+    \item \textbf{Architecture \& Modularization:} Clean Architecture, MVVM, MVVM-C, Coordinator Pattern, Dependency Injection, SOLID, Swift Package Manager (feature modules), Design Systems (Figma-driven tokens), ADRs
+    \item \textbf{Quality \& Performance:} XCTest, XCUITest, Swift Testing, Snapshot Testing, Maestro (end-to-end), Instruments
+    \item \textbf{Release \& Tooling:} Git, Fastlane (match), GitHub Actions (CI/CD), SwiftLint, Firebase (Crashlytics, Analytics, Firestore, Remote Config), RevenueCat, AI-assisted development (Claude Code, Codex, GitHub Copilot)
     \item \textbf{APIs \& Platform:} REST APIs, GraphQL, CoreLocation, MapKit, APNs, Keychain, BGTask
-    \item \textbf{Spoken Languages:} Portuguese (native), English (professional working proficiency)
 \end{itemize}
 
 %------- EDUCATION -------
 \section*{Education}
 
-\begin{itemize}[leftmargin=0.15in]
+\begin{itemize}[leftmargin=0.15in, label={}]
     \resumeSubheading
         {Bachelor of Computer Science}{2011 -- 2016}
         {Federal University of Maranhão (UFMA)}{}
 
 \end{itemize}
+
+%------- LANGUAGES -------
+\vspace{0.3em}
+\noindent\textbf{Languages:} Portuguese (native) $|$ English (professional working proficiency)
 
 \end{document}
